@@ -1,0 +1,17 @@
+{
+  "name": "百人一首C-ゴロでマル覚え-",
+  "short_name": "百人一首C-ゴロでマル覚え-",
+  "description": "百人一首をゴロで覚える学習アプリ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f5a623",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

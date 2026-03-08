@@ -1,0 +1,37 @@
+{
+  "name": "hyakunin-goromaru-cloudflare",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "cf:build": "npx @opennextjs/cloudflare build",
+    "preview": "npm run cf:build && wrangler dev",
+    "deploy": "npm run cf:build && wrangler deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "howler": "^2.2.4",
+    "next": "15.5.12",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260307.1",
+    "@eslint/eslintrc": "^3",
+    "@opennextjs/cloudflare": "^1.17.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/howler": "^2.2.12",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "daisyui": "^5.5.19",
+    "esbuild": "^0.27.3",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.12",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "wrangler": "^4.71.0"
+  }
+}

@@ -1,0 +1,12 @@
+name = "hyakunin-goromaru"
+main = ".open-next/worker.js"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".open-next/assets"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hyakunin-goromaru-db"
+database_id = "0bcd82c1-f691-490b-ba76-0a671c33a759"
