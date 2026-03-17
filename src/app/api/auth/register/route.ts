@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
       .run();
 
     const token = await signJWT(uid);
-    const response = NextResponse.json({ uid, name, email }, { status: 201 });
+    const response = NextResponse.json({ user: { uid, name, email }, token }, { status: 201 });
     response.cookies.set(COOKIE_NAME, token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",

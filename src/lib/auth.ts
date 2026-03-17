@@ -56,6 +56,15 @@ export async function signJWT(uid: string): Promise<string> {
 }
 
 export async function getAuthUser(request: Request): Promise<JWTPayload | null> {
+  // 1. Authorization: Bearer <token> ヘッダーを優先（モバイルアプリ向け）
+  const authHeader = request.headers.get("authorization") ?? "";
+  if (authHeader.startsWith("Bearer ")) {
+    const token = authHeader.slice(7);
+    const payload = await verifyJWT(token);
+    if (payload) return payload;
+  }
+
+  // 2. Cookie からトークンを取得（Webブラウザ向け）
   const cookieHeader = request.headers.get("cookie") ?? "";
   const match = cookieHeader.match(new RegExp(`(?:^|;\\s*)${COOKIE_NAME}=([^;]+)`));
   if (!match) return null;

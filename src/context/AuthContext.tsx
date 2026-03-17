@@ -35,8 +35,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(null);
         return;
       }
-      const data = (await res.json()) as { uid: string; name: string; email: string };
-      setUser({ uid: data.uid, name: data.name, email: data.email });
+      const data = (await res.json()) as { user: { uid: string; name: string; email: string } };
+      setUser({ uid: data.user.uid, name: data.user.name, email: data.user.email });
     } catch {
       setUser(null);
     }

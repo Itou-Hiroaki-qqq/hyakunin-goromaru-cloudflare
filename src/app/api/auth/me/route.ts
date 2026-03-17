@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import { verifyJWT, COOKIE_NAME } from "@/lib/auth";
+import { getAuthUser } from "@/lib/auth";
 
 interface UserRow {
   uid: string;
@@ -10,12 +10,7 @@ interface UserRow {
 
 export async function GET(request: NextRequest) {
   try {
-    const token = request.cookies.get(COOKIE_NAME)?.value;
-    if (!token) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const payload = await verifyJWT(token);
+    const payload = await getAuthUser(request);
     if (!payload) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
@@ -33,9 +28,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json({
-      uid: user.uid,
-      name: user.name,
-      email: user.email,
+      user: { uid: user.uid, name: user.name, email: user.email },
     });
   } catch (err) {
     console.error("me error:", err);
