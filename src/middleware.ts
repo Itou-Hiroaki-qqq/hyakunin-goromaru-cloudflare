@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifyJWT, COOKIE_NAME } from "./lib/auth";
 
 // 認証なしでアクセス可能なパス
-const PUBLIC_PATHS = ["/login", "/register"];
+const PUBLIC_PATHS = ["/login", "/register", "/privacy"];
 
 // CORSヘッダーを付与するヘルパー
 function withCors(response: NextResponse): NextResponse {
