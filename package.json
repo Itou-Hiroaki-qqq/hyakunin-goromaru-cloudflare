@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "howler": "^2.2.4",
-    "next": "15.5.12",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260307.1",
+    "@cloudflare/workers-types": "^5.20261031.1",
     "@eslint/eslintrc": "^3",
-    "@opennextjs/cloudflare": "^1.17.1",
+    "@opennextjs/cloudflare": "^1.20.15",
     "@tailwindcss/postcss": "^4",
     "@types/howler": "^2.2.12",
     "@types/node": "^20",
@@ -32,6 +32,6 @@
     "eslint-config-next": "15.5.12",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^4.71.0"
+    "wrangler": "^4.156.0"
   }
 }

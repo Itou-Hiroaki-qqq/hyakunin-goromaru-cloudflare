@@ -5,6 +5,7 @@ import { AuthProvider } from "@/context/AuthContext";
 export const metadata: Metadata = {
   title: "百人ゴロ丸",
   description: "百人一首をゴロで覚える学習アプリ",
+  robots: "noindex, nofollow",
   manifest: "/manifest.json",
   themeColor: "#f5a623",
   appleWebApp: {
